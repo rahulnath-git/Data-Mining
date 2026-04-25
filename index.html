@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Mining & Data Warehousing Notes</title>
+  <meta
+    name="description"
+    content="A modern study web app with detailed notes for data mining and data warehousing modules, including diagrams, topic navigation, and source-backed reading paths."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <p class="eyebrow"></p>
+        <h1>Data Mining and Data Warehousing</h1>
+        <p class="brand-copy">
+          Detailed, exam-ready notes for all five modules, organized as a clean reading workspace instead of a wall of text.
+        </p>
+      </div>
+
+      <section class="sidebar-panel">
+        <label class="search-label" for="topic-search">Search topics</label>
+        <input id="topic-search" class="search-input" type="search" placeholder="Try OLAP, DBSCAN, FP-growth, PageRank">
+      </section>
+
+      <section class="sidebar-panel module-filter-panel">
+        <div class="panel-heading-row">
+          <h2>Modules</h2>
+          <button id="reset-filters" class="ghost-button" type="button">Reset</button>
+        </div>
+        <div id="module-filters" class="module-filters"></div>
+      </section>
+
+      <section class="sidebar-panel topic-list-panel">
+        <div class="panel-heading-row">
+          <h2>Topics</h2>
+          <span id="topic-count" class="panel-meta">0</span>
+        </div>
+        <nav id="topic-list" class="topic-list" aria-label="Topic navigation"></nav>
+      </section>
+    </aside>
+
+    <main class="main-panel">
+      <header class="hero">
+        <div class="hero-copy">
+          
+           
+        </div>
+        <div class="hero-stats">
+          <article class="stat-card">
+            
+            <strong id="module-total"></strong>
+          </article>
+          <article class="stat-card">
+            
+            <strong id="topic-total"></strong>
+          </article>
+          <article class="stat-card">
+            
+            <strong>Focused</strong>
+          </article>
+        </div>
+      </header>
+
+      <div class="content-grid">
+        <article id="topic-article" class="topic-article" aria-live="polite">
+          <div class="loading-state">
+            <p class="eyebrow">Loading</p>
+            <h3>Preparing the notes workspace...</h3>
+          </div>
+        </article>
+
+        <aside class="context-rail">
+          <section class="context-card">
+            <h3>On This Page</h3>
+            <nav id="section-nav" class="section-nav" aria-label="Section navigation"></nav>
+          </section>
+
+          <section class="context-card">
+            <h3>Study Tips</h3>
+            <ul class="tip-list">
+              <li>Read the first two sections to build intuition before memorizing algorithms.</li>
+              <li>Use the syllabus tags on every topic page to map notes back to your module outline.</li>
+              <li>For revision week, focus on contrasts, steps, strengths, and limitations.</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <template id="topic-link-template">
+    <button class="topic-link" type="button">
+      <span class="topic-module"></span>
+      <strong class="topic-title"></strong>
+      <span class="topic-coverage"></span>
+    </button>
+  </template>
+
+  <script src="./data/module-1.js" defer></script>
+  <script src="./data/module-2.js" defer></script>
+  <script src="./data/module-3.js" defer></script>
+  <script src="./data/module-4.js" defer></script>
+  <script src="./data/module-5.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
